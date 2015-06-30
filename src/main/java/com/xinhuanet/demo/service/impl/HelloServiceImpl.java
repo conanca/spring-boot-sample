@@ -1,6 +1,8 @@
 package com.xinhuanet.demo.service.impl;
 
 import com.xinhuanet.demo.service.HelloService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,8 +11,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class HelloServiceImpl implements HelloService {
+    private static Logger logger = LoggerFactory.getLogger(HelloServiceImpl.class);
 
     public void say() {
+        logger.info("say...");
         System.out.println("Hello world!");
     }
 }
