@@ -1,0 +1,3 @@
+# log配置
+logging.file: /tmp/demo-spring-boot/root.log
+logging.level.*: DEBUG
