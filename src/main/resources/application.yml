@@ -8,3 +8,6 @@ logging.level.*: INFO
 spring:
   thymeleaf:
     cache: false
+
+
+spring.data.mongodb.uri: mongodb://user7:xinhua@192.168.83.215:27017/data-center-common
