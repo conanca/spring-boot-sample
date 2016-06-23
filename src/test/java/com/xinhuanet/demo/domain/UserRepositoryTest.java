@@ -28,9 +28,7 @@ public class UserRepositoryTest {
 
     @Before
     public void before() throws Exception {
-        this.userRepository.deleteAll();
-
-        // save a couple of customers
+        // save a couple of users
         this.userRepository.save(new User("Jack", "123"));
         this.userRepository.save(new User("John", "123"));
         this.userRepository.save(new User("Kate", "123"));
@@ -38,7 +36,7 @@ public class UserRepositoryTest {
 
     @After
     public void after() throws Exception {
-        this.userRepository.deleteAll();
+//        this.userRepository.deleteAll();
     }
 
     @Test
