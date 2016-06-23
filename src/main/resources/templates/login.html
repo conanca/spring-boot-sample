@@ -4,7 +4,7 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <title>Spring Security Example </title>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <link rel="stylesheet" href="../static/semantic/semantic.min.css" th:href="@{/semantic/semantic.min.css}"/>
     <script src="../static/js/jquery-3.0.0.min.js" th:src="@{/js/jquery-3.0.0.min.js}"></script>
     <script src="../static/semantic/semantic.min.js" th:src="@{/semantic/semantic.min.js}"></script>
@@ -33,11 +33,7 @@
                                         rules: [
                                             {
                                                 type   : 'empty',
-                                                prompt : 'Please enter your e-mail'
-                                            },
-                                            {
-                                                type   : 'length[6]',
-                                                prompt : 'Your password must be at least 6 characters'
+                                                prompt : 'Please enter your username'
                                             }
                                         ]
                                     },
@@ -47,10 +43,6 @@
                                             {
                                                 type   : 'empty',
                                                 prompt : 'Please enter your password'
-                                            },
-                                            {
-                                                type   : 'length[6]',
-                                                prompt : 'Your password must be at least 6 characters'
                                             }
                                         ]
                                     }
@@ -63,11 +55,11 @@
 
 </head>
 <body>
-<div th:if="${param.error}">
-    用户名或密码错
+<div class="ui negative message" th:if="${param.error}">
+    <p>用户名或密码错</p>
 </div>
-<div th:if="${param.logout}">
-    您已注销成功
+<div class="ui positive message" th:if="${param.logout}">
+    <p>您已注销成功</p>
 </div>
 
 <div class="ui middle aligned center aligned grid">
