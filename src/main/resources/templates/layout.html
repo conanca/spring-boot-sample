@@ -5,9 +5,9 @@
       xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
 <head>
     <!-- Standard Meta -->
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 
     <!-- Site Properties -->
     <title>Layout</title>
@@ -20,15 +20,19 @@
         body {
             background-color: #FFFFFF;
         }
+
         .ui.menu .item img.logo {
             margin-right: 1.5em;
         }
+
         .main.container {
             margin-top: 7em;
         }
+
         .wireframe {
             margin-top: 2em;
         }
+
         .ui.footer.segment {
             margin: 5em 0em 0em;
             padding: 5em 0em;
@@ -45,11 +49,14 @@
             Project Name
         </a>
         <a href="#" class="item">Home</a>
+
         <div class="ui simple dropdown item">
             Dropdown <i class="dropdown icon"></i>
+
             <div class="menu">
                 <a class="item" href="#">Link Item</a>
                 <a class="item" href="#">Link Item</a>
+
                 <div class="divider"></div>
                 <div class="header">Header Item</div>
                 <div class="item">
@@ -63,13 +70,25 @@
                 <a class="item" href="#">Link Item</a>
             </div>
         </div>
-        <div class="right ui simple dropdown item">
-            <span sec:authentication="name">Bob</span> <i class="dropdown icon"></i>
+
+        <div class="right ui simple dropdown item" sec:authorize="isAuthenticated()">
+            <a sec:authentication="name">Bob</a>
+            <i class="dropdown icon"></i>
+
             <div class="menu">
-                <a class="item" href="#">登出</a>
+                <a class="item" href="#" th:href="@{/logout}">登出</a>
+            </div>
+        </div>
+        <div class="right ui simple item" sec:authorize="isAnonymous()">
+            <div class="item">
+                <a class="ui button" th:href="@{/login}">Log in</a>
+            </div>
+            <div class="item">
+                <a class="ui primary button">Sign Up</a>
             </div>
         </div>
     </div>
+
 </div>
 
 <div class="ui main text container" layout:fragment="content">Fake content</div>
