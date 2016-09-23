@@ -16,11 +16,12 @@ public class User {
     private String name;
     private String password;
     @DBRef
-    private List<String> Role;
+    private List<Role> roles;
 
-    public User(String name,String password){
+    public User(String name,String password,List<Role> roles){
         this.name = name;
         this.password = password;
+        this.roles = roles;
     }
 
     public String getId() {
@@ -47,11 +48,11 @@ public class User {
         this.password = password;
     }
 
-    public List<String> getRole() {
-        return Role;
+    public List<Role> getRoles() {
+        return roles;
     }
 
-    public void setRole(List<String> role) {
-        Role = role;
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
     }
 }

@@ -1,12 +1,12 @@
 package com.xinhuanet.demo.service.impl;
 
-import com.xinhuanet.demo.App;
-import org.junit.Test;
-import org.junit.Before;
+import com.xinhuanet.demo.service.HelloService;
 import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
@@ -17,11 +17,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * @since <pre>六月 30, 2015</pre>
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = App.class)
+@SpringBootTest
 public class HelloServiceImplTest {
 
     @Autowired
-    private HelloServiceImpl helloServiceImpl;
+    private HelloService helloServiceImpl;
 
     @Before
     public void before() throws Exception {

@@ -14,10 +14,10 @@
 Logged user: <span sec:authentication="name">Bob</span>
 Roles: <span sec:authentication="principal.authorities">[ROLE_USER, ROLE_ADMIN]</span>
 
-<div sec:authorize="hasRole('ADMIN')">
+<div sec:authorize="hasRole('ROLE_ADMIN')">
     This content is only shown to administrators.
 </div>
-<div sec:authorize="hasRole('USER')">
+<div sec:authorize="hasRole('ROLE_USER')">
     This content is only shown to users.
 </div>
 
