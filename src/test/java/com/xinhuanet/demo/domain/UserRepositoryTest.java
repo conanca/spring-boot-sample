@@ -42,7 +42,7 @@ public class UserRepositoryTest {
             admin = roleRepository.save(admin);
             Role user = new Role("ROLE_USER");
             user = roleRepository.save(user);
-            List<Role> roles = new ArrayList<>();
+            List<Role> roles = new ArrayList();
             roles.add(admin);
 
             // save a couple of users

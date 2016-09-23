@@ -44,7 +44,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     }
 
     private List<SimpleGrantedAuthority> getAuthorities(List<Role> roles) {
-        List<SimpleGrantedAuthority> authList = new ArrayList<>();
+        List<SimpleGrantedAuthority> authList = new ArrayList();
 
         for (Role role : roles) {
             if (role != null && role.getName().trim().length() > 0) {
