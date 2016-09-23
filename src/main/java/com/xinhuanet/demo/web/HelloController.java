@@ -15,9 +15,16 @@ public class HelloController {
 
     @RequestMapping("/sayHello")
     @ResponseBody
-    public String home() {
+    public String sayHello() {
         helloService.say();
         return "Hello World!";
+    }
+
+    @RequestMapping("/call")
+    @PreAuthorize("hasRole('ROLE_USER')")
+    @ResponseBody
+    public String call() {
+        return "calling!";
     }
 
     @RequestMapping("/")
