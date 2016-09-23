@@ -11,7 +11,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.ArrayList;
@@ -25,6 +25,9 @@ import java.util.List;
 public class UserRepositoryTest {
 
     private static boolean initialized = false;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Autowired
     private UserRepository userRepository;
@@ -43,10 +46,10 @@ public class UserRepositoryTest {
             roles.add(admin);
 
             // save a couple of users
-            userRepository.save(new User("Jack", new BCryptPasswordEncoder().encode("123"), roles));
+            userRepository.save(new User("jack", passwordEncoder.encode("123"), roles));
             roles.add(user);
-            userRepository.save(new User("John", new BCryptPasswordEncoder().encode("123"), roles));
-            userRepository.save(new User("Kate", new BCryptPasswordEncoder().encode("123"), roles));
+            userRepository.save(new User("john", passwordEncoder.encode("123"), roles));
+            userRepository.save(new User("kate", passwordEncoder.encode("123"), roles));
             initialized=true;
         }
     }
