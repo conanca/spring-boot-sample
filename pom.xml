@@ -12,6 +12,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- 等spring boot支持thymeleaf3时，就可以删掉下面配置了-->
+        <thymeleaf.version>3.0.0.RELEASE</thymeleaf.version>
+        <thymeleaf-layout-dialect.version>2.0.3</thymeleaf-layout-dialect.version>
     </properties>
 
     <parent>
@@ -43,25 +46,9 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- 等spring boot支持thymeleaf3时，就可以删掉下面依赖了-->
-        <dependency>
-            <groupId>org.thymeleaf</groupId>
-            <artifactId>thymeleaf</artifactId>
-            <version>3.0.0.RELEASE</version>
-        </dependency>
         <dependency>
             <groupId>org.thymeleaf.extras</groupId>
             <artifactId>thymeleaf-extras-springsecurity4</artifactId>
-            <version>3.0.0.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>nz.net.ultraq.thymeleaf</groupId>
-            <artifactId>thymeleaf-layout-dialect</artifactId>
-            <version>2.0.3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.thymeleaf</groupId>
-            <artifactId>thymeleaf-spring4</artifactId>
             <version>3.0.0.RELEASE</version>
         </dependency>
 
