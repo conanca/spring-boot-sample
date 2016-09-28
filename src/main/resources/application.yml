@@ -10,4 +10,4 @@ spring:
     cache: false
 
 
-spring.data.mongodb.uri: mongodb://user7:xinhua@192.168.83.215:27017/data-center-common
+spring.data.mongodb.uri: mongodb://user7:xinhua@192.168.84.102:27017/demo-spring-boot
