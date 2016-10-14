@@ -1,0 +1,26 @@
+version: '2'
+services:
+
+  mongodata:
+    image: reg.news.cn/library/xh-baseimage:3.4
+    volumes:
+      - /data/db
+    command: /bin/true
+
+  mongodb:
+    restart: always
+    image: tutum/mongodb:3.2
+    environment:
+      - MONGODB_USER=user7
+      - MONGODB_PASS=xinhua
+      - MONGODB_DATABASE=demo-spring-boot
+    volumes_from:
+      - mongodata
+
+  web:
+    restart: always
+    image: reg.news.cn/gongchengdong/demo-spring-boot:1.0
+    depends_on:
+      - mongodb
+    ports:
+      - 8080:8080
