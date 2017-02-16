@@ -1,6 +1,7 @@
 package com.xinhuanet.demo.web;
 
 import com.xinhuanet.demo.service.HelloService;
+import com.xinhuanet.demo.service.impl.DbInitServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -12,6 +13,15 @@ public class HelloController {
 
     @Autowired
     private HelloService helloService;
+
+    @Autowired
+    private DbInitServiceImpl dbInitService;
+
+    @RequestMapping("/dbInit")
+    public String dbInit() {
+        dbInitService.dbInit();
+        return "index";
+    }
 
     @RequestMapping("/sayHello")
     @ResponseBody
