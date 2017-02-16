@@ -25,13 +25,6 @@ mvn package
 java -jar target/spring-boot-sample-1.0-SNAPSHOT.jar
 ```
 
-- docker 方式运行：
-```
-docker run -d -p 27017:27017 -p 28017:28017 -e MONGODB_USER=user7 -e MONGODB_PASS=xinhua -e MONGODB_DATABASE=demo-spring-boot tutum/mongodb
-docker build -t="reg.news.cn/gongchengdong/spring-boot-sample:1.0" .
-docker run -d -p 8080:8080 reg.news.cn/gongchengdong/spring-boot-sample:1.0
-```
-
 - docker compose方式运行：
   1. 按“本地编译运行”先编译jar包  
   2.
