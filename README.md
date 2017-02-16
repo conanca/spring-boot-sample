@@ -33,6 +33,8 @@ docker run -d -p 8080:8080 reg.news.cn/gongchengdong/spring-boot-sample:1.0
 ```
 
 - docker compose方式运行：
+  1. 按“本地编译运行”先编译jar包  
+  2.
 ```
 docker-compose up -d
 ```
