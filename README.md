@@ -26,8 +26,8 @@ java -jar target/spring-boot-sample-1.0-SNAPSHOT.jar
 ```
 
 - docker compose方式运行：
-  1. 按“本地编译运行”先编译jar包  
-  2.
+  1. 按“本地编译运行”先编译jar包   
+  2. 启动
 ```
 docker-compose up -d
 ```
