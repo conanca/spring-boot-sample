@@ -19,7 +19,7 @@ services:
 
   web:
     restart: always
-    image: reg.news.cn/gongchengdong/demo-spring-boot:1.0
+    image: reg.news.cn/gongchengdong/spring-boot-sample:1.0
     depends_on:
       - mongodb
     ports:
