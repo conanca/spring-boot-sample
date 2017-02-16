@@ -9,7 +9,7 @@ services:
 
   mongodb:
     restart: always
-    image: tutum/mongodb:3.2
+    image: tutum/mongodb
     environment:
       - MONGODB_USER=user7
       - MONGODB_PASS=xinhua
@@ -19,8 +19,8 @@ services:
 
   web:
     restart: always
-    image: reg.news.cn/gongchengdong/spring-boot-sample:1.0
-    depends_on:
+    build: .
+    links:
       - mongodb
     ports:
       - 8080:8080

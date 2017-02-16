@@ -12,19 +12,27 @@ spring boot 示例项目。主要实现了操作mongodb数据库，网页模板�
 - Semantic UI
 
 ## 运行
-1. 启动mongodb
+
+
+- 本地编译运行：
+  1. 启动mongodb
 ```
 docker run -d -p 27017:27017 -p 28017:28017 -e MONGODB_USER=user7 -e MONGODB_PASS=xinhua -e MONGODB_DATABASE=demo-spring-boot tutum/mongodb
 ```
-2. 运行
-  - 本地编译运行：
+  2.编译运行
 ```
 mvn package
 java -jar target/spring-boot-sample-1.0-SNAPSHOT.jar
 ```
 
- - docker 方式运行：
+- docker 方式运行：
 ```
+docker run -d -p 27017:27017 -p 28017:28017 -e MONGODB_USER=user7 -e MONGODB_PASS=xinhua -e MONGODB_DATABASE=demo-spring-boot tutum/mongodb
 docker build -t="reg.news.cn/gongchengdong/spring-boot-sample:1.0" .
 docker run -d -p 8080:8080 reg.news.cn/gongchengdong/spring-boot-sample:1.0
+```
+
+- docker compose方式运行：
+```
+docker-compose up -d
 ```
