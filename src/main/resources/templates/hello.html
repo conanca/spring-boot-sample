@@ -21,6 +21,10 @@ Roles: <span sec:authentication="principal.authorities">[ROLE_USER, ROLE_ADMIN]<
     This content is only shown to users.
 </div>
 
+<div>
+    <a th:href="@{/call}">only to user who has role 'ROLE_USER' </a>
+</div>
+
 <form th:action="@{/logout}" method="post">
     <input type="submit" value="注销"/>
 </form>
