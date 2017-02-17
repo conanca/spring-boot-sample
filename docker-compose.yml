@@ -21,10 +21,10 @@ services:
     volumes_from:
       - mongodata
 
-  web-a:
+  web:
     restart: always
     build: .
-    links:
+    depends_on:
       - redis
       - mongodb
     ports:
