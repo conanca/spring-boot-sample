@@ -18,7 +18,7 @@ import java.util.List;
  */
 @Service
 public class DbInitServiceImpl {
-    private static Logger logger = LoggerFactory.getLogger(UserDetailsServiceImpl.class);
+    private static Logger logger = LoggerFactory.getLogger(DbInitServiceImpl.class);
 
     @Autowired
     private UserRepository userRepository;
