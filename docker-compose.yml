@@ -21,10 +21,11 @@ services:
     volumes_from:
       - mongodata
 
-  web:
+  web-a:
     restart: always
     build: .
     links:
+      - redis
       - mongodb
     ports:
       - 8080:8080
