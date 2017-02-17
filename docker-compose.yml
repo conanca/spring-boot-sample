@@ -1,5 +1,9 @@
 version: '2'
 services:
+  redis:
+    restart: always
+    image: redis:alpine
+    command: redis-server --appendonly yes --requirepass test
 
   mongodata:
     image: reg.news.cn/library/xh-baseimage:3.4
@@ -12,8 +16,8 @@ services:
     image: tutum/mongodb
     environment:
       - MONGODB_USER=user7
-      - MONGODB_PASS=xinhua
-      - MONGODB_DATABASE=demo-spring-boot
+      - MONGODB_PASS=test
+      - MONGODB_DATABASE=spring-boot-sample
     volumes_from:
       - mongodata
 

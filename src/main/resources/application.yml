@@ -2,8 +2,8 @@
 server.port: 8080
 
 # log配置
-logging.file: /tmp/demo-spring-boot/root.log
-logging.level.*: INFO
+logging.file: /tmp/spring-boot-sample/root.log
+logging.level.*: DEBUG
 
 spring:
   thymeleaf:
@@ -11,13 +11,22 @@ spring:
 
   data:
     mongodb:
-      uri: mongodb://user7:xinhua@localhost:27017/demo-spring-boot
+      uri: mongodb://user7:test@localhost:27017/spring-boot-sample
+
+  session:
+    store-type: redis
+
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    password: test
 ---
 # 端口配置
 server.port: 8080
 
 # log配置
-logging.file: /tmp/demo-spring-boot/root.log
+logging.file: /tmp/spring-boot-sample/root.log
 logging.level.*: INFO
 
 spring:
@@ -27,4 +36,13 @@ spring:
 
   data:
     mongodb:
-      uri: mongodb://user7:xinhua@mongodb:27017/demo-spring-boot
+      uri: mongodb://user7:test@mongodb:27017/spring-boot-sample
+
+  session:
+    store-type: redis
+
+  redis:
+    database: 0
+    host: redis
+    port: 6379
+    password: test

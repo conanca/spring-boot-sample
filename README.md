@@ -15,15 +15,19 @@ spring boot 示例项目。主要实现了操作mongodb数据库，网页模板�
 
 
 - 本地编译运行：
- 1. 启动mongodb
-```
-docker run -d -p 27017:27017 -p 28017:28017 -e MONGODB_USER=user7 -e MONGODB_PASS=xinhua -e MONGODB_DATABASE=demo-spring-boot tutum/mongodb
-```
- 2.编译运行
-```
+ 1. 启动redis
+ ```
+ docker run -d -p 6379:6379 redis:alpine redis-server --appendonly yes --requirepass test
+ ```
+ 2. 启动mongodb
+ ```
+docker run -d -p 27017:27017 -p 28017:28017 -e MONGODB_USER=user7 -e MONGODB_PASS=test -e MONGODB_DATABASE=spring-boot-sample tutum/mongodb
+ ```
+ 3.编译运行
+ ```
 mvn package
 java -jar target/spring-boot-sample-1.0-SNAPSHOT.jar
-```
+ ```
 
 - docker compose方式运行：
   1. 按“本地编译运行”先编译jar包   
