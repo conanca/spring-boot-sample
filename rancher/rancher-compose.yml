@@ -1,0 +1,24 @@
+version: '2'
+services:
+  lb:
+    scale: 1
+    lb_config:
+      port_rules:
+      - source_port: 8089
+        target_port: 8080
+        service: web
+    health_check:
+      port: 42
+      interval: 2000
+      unhealthy_threshold: 3
+      healthy_threshold: 2
+      response_timeout: 2000
+  web:
+    scale: 3
+    start_on_create: true
+  mongodb:
+    scale: 1
+    start_on_create: true
+  redis:
+    scale: 1
+    start_on_create: true

@@ -1,0 +1,27 @@
+version: '2'
+services:
+  lb:
+    image: rancher/lb-service-haproxy
+    ports:
+    - 8089
+  web:
+    image: reg.news.cn/gongchengdong/spring-boot-sample:1.0
+    links:
+    - mongodb:mongodb
+    - redis:redis
+    ports:
+    - 8080:8080/tcp
+  mongodb:
+    image: tutum/mongodb
+    environment:
+      MONGODB_DATABASE: spring-boot-sample
+      MONGODB_PASS: test
+      MONGODB_USER: user7
+  redis:
+    image: redis:alpine
+    command:
+    - redis-server
+    - --appendonly
+    - 'yes'
+    - --requirepass
+    - test
