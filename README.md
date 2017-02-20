@@ -1,8 +1,8 @@
 
-## 项目简介
+# 项目简介
 一个基于 spring boot 的 web 示例项目。主要实现了操作mongodb数据库，网页模板，装饰器布局，分布式session管理，验证和鉴权，前端样式等。
 
-## 组件
+# 组件
 - Spring Boot
 - Spring Session
 - Spring Security
@@ -12,10 +12,10 @@
 - Thymeleaf Layout Dialect
 - Semantic UI
 
-## 运行
+# 运行
 
 
-### 本地编译运行：
+## 本地编译运行：
 1. 启动redis
  ```
  docker run -d -p 6379:6379 redis:alpine redis-server --appendonly yes --requirepass test
@@ -30,14 +30,14 @@
  java -jar target/spring-boot-sample-1.0-SNAPSHOT.jar
  ```
 
-### docker compose方式运行：
+## docker compose方式运行：
 1. 按“本地编译运行”先编译jar包   
 2. 启动
 ```
 docker-compose up -d
 ```
 
-### rancher上部署运行
+## rancher上部署运行
 1. 按“本地编译运行”先编译jar包  
 2. build docker镜像并push至镜像仓库
   ```
