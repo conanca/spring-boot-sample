@@ -35,3 +35,12 @@ spring boot 示例项目。主要实现了操作mongodb数据库，网页模板�
 ```
 docker-compose up -d
 ```
+
+- rancher上部署运行
+  1. 按“本地编译运行”先编译jar包  
+  2. build docker镜像并push至镜像仓库
+  ```
+  docker build . -t "reg.news.cn/gongchengdong/spring-boot-sample:1.1"
+  docker push reg.news.cn/gongchengdong/spring-boot-sample:1.1
+  ```
+  3. rancher上“添加应用栈”，“导入COMPOSE”时选择/rancher/目录下的配置文件
