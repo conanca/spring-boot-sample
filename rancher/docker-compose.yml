@@ -1,7 +1,7 @@
 version: '2'
 services:
   web:
-    image: reg.news.cn/gongchengdong/spring-boot-sample:1.0
+    image: reg.news.cn/gongchengdong/spring-boot-sample:0.1
     links:
     - mongodb:mongodb
     - redis:redis
