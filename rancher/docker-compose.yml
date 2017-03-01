@@ -1,16 +1,23 @@
 version: '2'
+
+volumes:
+  mongodbdata-volume:
+    driver: local
+
 services:
   web:
     image: reg.news.cn/gongchengdong/spring-boot-sample:0.1
     links:
-    - mongodb:mongodb
-    - redis:redis
+      - mongodb:mongodb
+      - redis:redis
     ports:
-    - 8080:8080
+      - 8080:8080
   lb:
     image: rancher/lb-service-haproxy
     ports:
-    - 80
+      - 80
+    volumes:
+      - gogsdata-volume:/data/db
   mongodb:
     image: tutum/mongodb
     environment:
@@ -20,8 +27,8 @@ services:
   redis:
     image: redis:alpine
     command:
-    - redis-server
-    - --appendonly
-    - 'yes'
-    - --requirepass
-    - test
+      - redis-server
+      - --appendonly
+      - 'yes'
+      - --requirepass
+      - test
