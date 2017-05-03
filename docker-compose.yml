@@ -1,15 +1,14 @@
-version: '2'
+version: '3'
+
+volumes:
+  mongodata-volume:
+    driver: local
+
 services:
   redis:
     restart: always
     image: redis:alpine
     command: redis-server --appendonly yes --requirepass test
-
-  mongodata:
-    image: reg.news.cn/library/xh-baseimage:3.4
-    volumes:
-      - /data/db
-    command: /bin/true
 
   mongodb:
     restart: always
@@ -18,8 +17,8 @@ services:
       - MONGODB_USER=user7
       - MONGODB_PASS=test
       - MONGODB_DATABASE=spring-boot-sample
-    volumes_from:
-      - mongodata
+    volumes:
+      - mongodata-volume:/data/db
 
   web:
     restart: always
@@ -28,4 +27,14 @@ services:
       - redis
       - mongodb
     ports:
-      - 8080:8080
+      - target: 8080
+        published: 80
+        protocol: tcp
+        mode: host
+    deploy:
+      replicas: 3
+      update_config:
+        parallelism: 2
+        delay: 10s
+      restart_policy:
+        condition: on-failure
