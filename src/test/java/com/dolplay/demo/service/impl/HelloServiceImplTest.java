@@ -1,6 +1,6 @@
-package com.xinhuanet.demo.service.impl;
+package com.dolplay.demo.service.impl;
 
-import com.xinhuanet.demo.service.HelloService;
+import com.dolplay.demo.service.HelloService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

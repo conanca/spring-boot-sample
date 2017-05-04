@@ -1,7 +1,7 @@
-package com.xinhuanet.demo.service.impl;
+package com.dolplay.demo.service.impl;
 
-import com.xinhuanet.demo.domain.Role;
-import com.xinhuanet.demo.domain.UserRepository;
+import com.dolplay.demo.domain.Role;
+import com.dolplay.demo.domain.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,11 +30,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
         logger.info("loading user...");
         // get user
-        List<com.xinhuanet.demo.domain.User> users = userRepository.findByName(username);
+        List<com.dolplay.demo.domain.User> users = userRepository.findByName(username);
         if (users.size() == 0) {
             throw new UsernameNotFoundException("User details not found with this username: " + username);
         }
-        com.xinhuanet.demo.domain.User user = users.get(0);
+        com.dolplay.demo.domain.User user = users.get(0);
         String password = user.getPassword();
         List<Role> roles = user.getRoles();
         List<SimpleGrantedAuthority> authList = getAuthorities(roles);

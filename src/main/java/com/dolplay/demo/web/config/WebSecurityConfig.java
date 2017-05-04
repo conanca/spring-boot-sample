@@ -1,4 +1,4 @@
-package com.xinhuanet.demo.web.config;
+package com.dolplay.demo.web.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;

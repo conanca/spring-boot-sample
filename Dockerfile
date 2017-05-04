@@ -1,5 +1,5 @@
-FROM reg.news.cn/library/xh-baseimage-java:8
-MAINTAINER gongchengdong <gongchengdong@news.cn>
+FROM reg.dolplay.com/library/xh-baseimage-java:8
+MAINTAINER conanca <imconan@gmail.com>
 
 ADD target/spring-boot-sample-1.0-SNAPSHOT.jar app.jar
 

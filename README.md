@@ -41,7 +41,7 @@ docker-compose up -d
 1. 按“本地编译运行”先编译jar包  
 2. build docker镜像并push至镜像仓库
   ```
-  docker build . -t "reg.news.cn/gongchengdong/spring-boot-sample:0.1"
-  docker push reg.news.cn/gongchengdong/spring-boot-sample:0.1
+  docker build . -t "reg.dolplay.com/gongchengdong/spring-boot-sample:0.1"
+  docker push reg.dolplay.com/gongchengdong/spring-boot-sample:0.1
   ```
 3. rancher上“添加应用栈”，“导入COMPOSE”时选择/rancher/目录下的配置文件

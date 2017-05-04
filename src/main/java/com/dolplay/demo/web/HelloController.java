@@ -1,7 +1,7 @@
-package com.xinhuanet.demo.web;
+package com.dolplay.demo.web;
 
-import com.xinhuanet.demo.service.HelloService;
-import com.xinhuanet.demo.service.impl.DbInitServiceImpl;
+import com.dolplay.demo.service.HelloService;
+import com.dolplay.demo.service.impl.DbInitServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

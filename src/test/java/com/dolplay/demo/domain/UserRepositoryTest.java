@@ -1,4 +1,4 @@
-package com.xinhuanet.demo.domain;
+package com.dolplay.demo.domain;
 
 import com.alibaba.fastjson.JSON;
 import org.junit.After;

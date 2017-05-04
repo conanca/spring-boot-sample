@@ -1,4 +1,4 @@
-package com.xinhuanet.demo.domain;
+package com.dolplay.demo.domain;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

@@ -1,9 +1,9 @@
-package com.xinhuanet.demo.service.impl;
+package com.dolplay.demo.service.impl;
 
-import com.xinhuanet.demo.domain.Role;
-import com.xinhuanet.demo.domain.RoleRepository;
-import com.xinhuanet.demo.domain.User;
-import com.xinhuanet.demo.domain.UserRepository;
+import com.dolplay.demo.domain.Role;
+import com.dolplay.demo.domain.RoleRepository;
+import com.dolplay.demo.domain.User;
+import com.dolplay.demo.domain.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

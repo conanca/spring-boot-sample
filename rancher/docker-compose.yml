@@ -6,7 +6,7 @@ volumes:
 
 services:
   web:
-    image: reg.news.cn/gongchengdong/spring-boot-sample:0.1
+    image: reg.dolplay.com/gongchengdong/spring-boot-sample:0.1
     links:
       - mongodb:mongodb
       - redis:redis
